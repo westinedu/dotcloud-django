@@ -9,7 +9,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-import django.utils.simplejson as json
+import json
 dotcloud_env = json.load(open('/home/dotcloud/environment.json'))
 
 DATABASES = {
