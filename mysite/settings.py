@@ -15,7 +15,7 @@ dotcloud_env = json.load(open('/home/dotcloud/environment.json'))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'root',                      # Or path to database file if using sqlite3.
+        'NAME': 'mysql',                      # Or path to database file if using sqlite3.
         'USER': dotcloud_env['DOTCLOUD_DB_MYSQL_LOGIN'],                      # Not used with sqlite3.
         'PASSWORD': dotcloud_env['DOTCLOUD_DB_MYSQL_PASSWORD'],                  # Not used with sqlite3.
         'HOST': dotcloud_env['DOTCLOUD_DB_MYSQL_HOST'],                      # Set to empty string for localhost. Not used with sqlite3.
