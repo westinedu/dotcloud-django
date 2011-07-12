@@ -1,6 +1,9 @@
 # Django settings for mysite project.
 
-DEBUG = True
+import os
+
+DEBUG = os.environ['USER'] != 'dotcloud'
+
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
