@@ -1,7 +1,9 @@
 # Django settings for mysite project.
 
 import os
+import json
 
+#If local DEBUG is True.
 DEBUG = os.environ['USER'] != 'dotcloud'
 
 TEMPLATE_DEBUG = DEBUG
@@ -12,8 +14,13 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-import json
-dotcloud_env = json.load(open('/home/dotcloud/environment.json'))
+#load mysql environment.
+if DEBUG:
+    env_path = os.path.abspath('../local_environment.json')
+else:
+    env_path = '/home/dotcloud/environment.json'
+
+dotcloud_env = json.load(open(env_path))
 
 DATABASES = {
     'default': {
@@ -112,7 +119,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/dotcloud/current/django_templates',
+    os.path.abspath('../django_templates'),
 )
 
 INSTALLED_APPS = (
