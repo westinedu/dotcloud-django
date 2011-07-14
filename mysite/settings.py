@@ -16,7 +16,7 @@ MANAGERS = ADMINS
 
 #load mysql environment.
 if DEBUG:
-    env_path = os.path.abspath('../local_environment.json')
+    env_path = os.path.abspath(os.path.dirname(__file__)) + '/../local_environment.json'
 else:
     env_path = '/home/dotcloud/environment.json'
 
@@ -119,7 +119,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.abspath('../django_templates'),
+    os.path.abspath(os.path.dirname(__file__)) + '/../django_templates',
 )
 
 INSTALLED_APPS = (
